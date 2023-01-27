@@ -1,9 +1,14 @@
 
 
-export function Post() {
+export function Post(props) {
+
+    const author = props.author
+
+
     return (
         <div>
-            <h1>Post</h1>
+            <h1>Autor: {author}</h1>
+            <p>{props.content}</p>
         </div>
     )
 }
