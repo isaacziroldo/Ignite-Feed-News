@@ -2,7 +2,7 @@
 
 import { Header } from './components/Header';
 import { Post } from './Post';
-import './Styles.css'
+import './Global.css'
 
 
 export function App()  {
