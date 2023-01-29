@@ -1,8 +1,11 @@
 
 
 import { Header } from './components/Header';
-import { Post } from './Post';
+import { Post } from './components/Post';
+
+import styles from './App.module.css'
 import './Global.css'
+import { Sidebar } from './components/Sidebar';
 
 
 export function App()  {
@@ -10,16 +13,22 @@ export function App()  {
     <div>
 
       <Header />
-      
-      <Post 
-        author='Isaac Ziroldo'
-        content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quasi nesciunt fuga odit nobis soluta, labore praesentium, dolores in beatae nemo aliquam aliquid nihil nulla eaque dolorem obcaecati dolore accusantium?'
-      />
+         
+      <div className={styles.wrapper}>
+        <Sidebar />
 
-<Post 
-        author='Kézia Ziroldo'
-        content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quasi nesciunt fuga odit nobis soluta, labore praesentium, dolores in beatae nemo aliquam aliquid nihil nulla eaque dolorem obcaecati dolore accusantium?'
-      />
+        <main>
+          <Post 
+            author='Isaac Ziroldo'
+            content='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse dolore molestias, veritatis in aspernatur sed cumque cum animi temporibus, optio aliquid earum. A error voluptatum accusamus. Voluptatem voluptates nemo nostrum!'
+          />
+
+          <Post 
+            author='Janilo'
+            content='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse dolore molestias, veritatis in aspernatur sed cumque cum animi temporibus, optio aliquid earum. A error voluptatum accusamus. Voluptatem voluptates nemo nostrum!'
+          />
+        </main>
+      </div>
     </div>
   )
 }
