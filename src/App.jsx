@@ -8,6 +8,38 @@ import './Global.css'
 import { Sidebar } from './components/Sidebar';
 
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: "https://github.com/isaacziroldo.png",
+      name: "Isaac Ziroldo",
+      role: "Web Developer",
+    },
+    content: [
+      {type: 'paragraph', content:"Fala galeraa 👋" },
+      {type: 'paragraph', content:"Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀"},
+      {type: 'link', content:"👉 jane.design/doctorcare" }
+    ],
+    publishedAt: new Date('2023-01-15 21:00:00')
+  },
+  {
+    id: 2,
+    author: {
+      avatarUrl: "https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+      name: "João Antônio",
+      role: "DBA",
+    },
+    content: [
+      {type: 'paragraph', content:"Fala galeraa 👋" },
+      {type: 'paragraph', content:"Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀"},
+      {type: 'link', content:"👉 jane.design/doctorcare" }
+    ],
+    publishedAt: new Date('2023-01-29 17:00:00')
+  },
+]
+
+
 export function App()  {
   return (
     <div>
@@ -18,15 +50,18 @@ export function App()  {
         <Sidebar />
 
         <main>
-          <Post 
-            author='Isaac Ziroldo'
-            content='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse dolore molestias, veritatis in aspernatur sed cumque cum animi temporibus, optio aliquid earum. A error voluptatum accusamus. Voluptatem voluptates nemo nostrum!'
-          />
+          {
+            posts.map(post => {
+              return (
 
-          <Post 
-            author='Janilo'
-            content='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse dolore molestias, veritatis in aspernatur sed cumque cum animi temporibus, optio aliquid earum. A error voluptatum accusamus. Voluptatem voluptates nemo nostrum!'
-          />
+                <Post 
+                  author={post.author}
+                  content={post.content}
+                  publishedAt={post.publishedAt}
+                />
+              )
+            })
+          }
         </main>
       </div>
     </div>
