@@ -7,7 +7,21 @@ import { Comment } from './Comment'
 import styles from './Post.module.css'
 
 
-export function Post( { author, publishedAt, content} ) {
+interface Author {
+    name: string,
+    role: string,
+    avatarUrl: String,
+
+} 
+
+interface PostProps {
+    author: Author,
+    publishedAt: Date,
+    content: string,    
+}
+
+
+export function Post( { author, publishedAt, content}: PostProps ) {
 
     const [comments, setComments] = useState([
         'Post muito bacana!',

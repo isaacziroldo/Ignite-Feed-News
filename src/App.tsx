@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Post } from './components/Post';
 
 import styles from './App.module.css'
+
 import './Global.css'
 import { Sidebar } from './components/Sidebar';
 
