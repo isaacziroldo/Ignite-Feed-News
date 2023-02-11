@@ -4,8 +4,13 @@ import { Avatar } from "./Avatar"
 import styles from './Comment.module.css'
 import { useState } from 'react';
 
+interface CommentProps {
+    content: string,
+    onDeleteComment: (comment: string) => void
+}
 
-export function Comment({ content, onDeleteComment }) {
+
+export function Comment({ content, onDeleteComment }: CommentProps) {
 
     const [likeCount, setLikeCount] = useState(0)
 
@@ -18,7 +23,7 @@ export function Comment({ content, onDeleteComment }) {
         setLikeCount((state) => {
             return state + 1
         })
-   }
+}
 
     return(
         <div className={styles.comment}>
